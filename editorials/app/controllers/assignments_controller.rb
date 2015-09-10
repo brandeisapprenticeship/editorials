@@ -12,6 +12,11 @@ class AssignmentsController < ApplicationController
   def show
   end
 
+  def postlist
+    @assignment = Assignment.find(params[:id])
+    @posts = Post.where(assignment_id: @assignment.id)
+  end
+
   # GET /assignments/new
   def new
     @assignment = Assignment.new

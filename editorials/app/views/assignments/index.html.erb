@@ -21,7 +21,7 @@
         <td><%= assignment.draft_due.strftime("%-b %-d at %I:%M%p") %></td>
         <td><%= assignment.final_due.strftime("%-b %-d at %I:%M%p") %></td>
         <td>link to my post form creation</td>
-        <td>link to post list in assignments folder</td>
+        <td><%=link_to "See Posts", {:controller => 'assignments', :action => 'postlist', :id => assignment.id}%></td>
         <%if current_user.admin?%>
           <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
