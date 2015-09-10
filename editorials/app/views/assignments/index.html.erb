@@ -1,20 +1,30 @@
-<p id="notice"><%= notice %></p>
+<h1>Assignments List</h1>
 
-<h1>Listing Assignments</h1>
-
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Title</th>
+      <th>Draft Due Date</th>
+      <th>Final Due Date</th>
+      <th>My Editorial</th>
+      <th>Class Editorials</th>
+      <%if current_user.admin?%>
+        <th>Admin Links</th>
+      <%end%>
     </tr>
   </thead>
 
   <tbody>
     <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= link_to 'Show', assignment %></td>
-        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= assignment.title %></td>
+        <td><%= assignment.draft_due.strftime("%-b %-d at %I:%M%p") %></td>
+        <td><%= assignment.final_due.strftime("%-b %-d at %I:%M%p") %></td>
+        <td>link to my post form creation</td>
+        <td>link to post list in assignments folder</td>
+        <%if current_user.admin?%>
+          <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Assignment', new_assignment_path %>
+<% if current_user.admin?%>
+  <%= link_to 'Create New Assignment', new_assignment_path %>
+<%end%>
