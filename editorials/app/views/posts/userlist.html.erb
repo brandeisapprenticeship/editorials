@@ -1,0 +1,17 @@
+<h1>User Portfolios</h1>
+<table class='table table-bordered'>
+	<thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Link to Portfolio</th>
+	    </tr>
+  	</thead>
+  	<tbody>
+	    <% @users.each do |user| %>
+	      <tr>
+	        <td><%= user.name %></td>
+	        <td><%= link_to "Go",  {:controller => 'posts', :action => 'index', :user_id => user.id}%></td>
+	      </tr>
+	    <% end %>
+  	</tbody>
+</table>

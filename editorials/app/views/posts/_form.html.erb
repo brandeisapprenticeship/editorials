@@ -11,6 +11,25 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :title, "Headline" %><br>
+    <%= f.text_field :title%>
+  </div>
+
+  <div class="field">
+    <%= f.label :assignment_id, "Which assignment is this post for?"%><br>
+    <%= f.collection_select :assignment_id, Assignment.all, :id, :title, :prompt => "Choose Assignment"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.cktext_area :content, :ckeditor => {:language => 'en'} %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :user_id, value: @user.id%>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

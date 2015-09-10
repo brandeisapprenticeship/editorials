@@ -1,25 +1,30 @@
-<p id="notice"><%= notice %></p>
+<h1><%=@user.name%>'s Portfolio</h1>
 
-<h1>Listing Posts</h1>
+<%@posts.each do |post|%>
+  <p>
+    <h2><%= post.title%></h2>
+  </p>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <p>
+    <%= post.assignment.title%>
+  </p>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <p>
+    <%=post.content.html_safe%>
+  </p>
 
+  <h4>Comments:</h4>
+    <%post.comments.each do |comment|%>
+      <p>
+        <%=comment.content.html_safe%>
+      </p>
+
+      <p>
+        By: <%=comment.user.name%>
+      </p>
+    <%end%>
+
+
+<%end%>
 <br>
 
-<%= link_to 'New Post', new_post_path %>

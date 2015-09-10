@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @user = User.find(params[:user_id])
+    @posts = Post.where(user_id: @user.id).order(assignment_id: :asc)
   end
 
   # GET /posts/1
@@ -12,13 +13,19 @@ class PostsController < ApplicationController
   def show
   end
 
+  def userlist
+    @users = User.where(admin: false).order(name: :asc)
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
+    @user = current_user
   end
 
   # GET /posts/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /posts

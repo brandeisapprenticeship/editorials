@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'posts/userlist'
   mount Ckeditor::Engine => '/ckeditor'
   resources :comments
   resources :assignments

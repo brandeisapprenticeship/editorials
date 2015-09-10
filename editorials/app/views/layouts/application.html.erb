@@ -33,6 +33,8 @@
 
 						<ul class="nav navbar-nav navbar-left"> 
 							<li><a class="topbar-link" href="<%= root_path %>"><%= 'Home' %></a></li>
+							<li><a class="topbar-link"><%= link_to 'My Portfolio', {:controller => 'posts', :action => 'index', :user_id => current_user.id} %></a></li>
+							<li><a class="topbar-link"><%= link_to 'Class Portfolios', {:controller => 'posts', :action => 'userlist'} %></a></li>
 
 							<br><br><br>
 						</ul>
