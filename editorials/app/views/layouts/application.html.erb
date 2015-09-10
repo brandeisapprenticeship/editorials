@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Editorials</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+
+	<title>Editorials</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
+	<link rel="stylesheet" href="custom.css.scss">
 </head>
 <body>
+	<header class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand">Editorial Writing</a>
 
-<%= yield %>
+					<nav> <%# navigation bar %>
 
-</body>
-</html>
+						<ul class="nav navbar-nav navbar-right"> 
+							<li><a class="toplink">Logged in as: 
+								<%= if current_user.nil?
+									"not logged in"
+								else
+									current_user.name 
+									end %>
+								</a>
+							</li>
+							<li><a class="toplink" <%=link_to 'Sign out', destroy_user_session_path, :method => :delete%></a></li>
+						</ul>
+
+
+						<ul class="nav navbar-nav navbar-left"> 
+							<li><a class="topbar-link" href="<%= root_path %>"><%= 'Home' %></a></li>
+
+							<br><br><br>
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+		</header>
+
+		<div class="row" style="margin-top:100px; margin-right:50px; margin-left:50px">
+			<%= yield %>
+		</div>
+
+	</body>
+	</html>
