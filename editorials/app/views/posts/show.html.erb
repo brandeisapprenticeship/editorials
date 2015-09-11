@@ -1,4 +1,26 @@
-<p id="notice"><%= notice %></p>
+<h1><%=@post.title%></h1>
+<h3>By: <%=@post.user.name%></h3>
+<br>
+<div class="postcontent">
+	<%=@post.content.html_safe%>
+</div>
+<br>
+<table class="table table-bordered">
+	<%@comments = @post.comments.order('created_at ASC')%>
+	<%@comments.each do |c|%>
+		<tr>
+			<td width="80%"><%=c.content.html_safe%></td>
+			<td width="20%" align="right">Commenter: <%=c.user.name%></td>
+		</tr>
+	<%end%>
+</table>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%=form_for(Comment.new) do |f|%>
+	<%=f.label :content, 'Add a Comment'%><br>
+	<%=f.cktext_area :content, :ckeditor => {:language => 'en'}%><br>
+	<%=f.hidden_field :user_id, value: current_user.id%>
+	<%=f.hidden_field :post_id, value: @post.id%>
+	<%=f.submit "Save Comment"%>
+<%end%>
+<%= link_to 'Back', {:controller => 'assignments', :action => 'postlist', :id => @post.assignment.id}%>
+

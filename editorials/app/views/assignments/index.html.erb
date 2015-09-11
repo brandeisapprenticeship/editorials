@@ -6,7 +6,9 @@
       <th>Title</th>
       <th>Draft Due Date</th>
       <th>Final Due Date</th>
-      <th>My Editorial</th>
+      <%if !current_user.admin?%>
+        <th>My Editorial</th>
+      <%end%>
       <th>Class Editorials</th>
       <%if current_user.admin?%>
         <th>Admin Links</th>
@@ -20,7 +22,9 @@
         <td><%= assignment.title %></td>
         <td><%= assignment.draft_due.strftime("%-b %-d at %I:%M%p") %></td>
         <td><%= assignment.final_due.strftime("%-b %-d at %I:%M%p") %></td>
-        <td>link to my post form creation</td>
+        <%if !current_user.admin?%>
+          <td>link to my post form creation</td>
+        <%end%>
         <td><%=link_to "See Posts", {:controller => 'assignments', :action => 'postlist', :id => assignment.id}%></td>
         <%if current_user.admin?%>
           <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
