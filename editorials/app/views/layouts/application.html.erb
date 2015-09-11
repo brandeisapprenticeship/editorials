@@ -17,27 +17,27 @@
 				<a class="navbar-brand">Editorial Writing</a>
 
 					<nav> <%# navigation bar %>
-
-						<ul class="nav navbar-nav navbar-right"> 
-							<li><a class="toplink">Logged in as: 
-								<%= if current_user.nil?
-									"not logged in"
-								else
-									current_user.name 
-									end %>
-								</a>
-							</li>
-							<li><a class="toplink" <%=link_to 'Sign out', destroy_user_session_path, :method => :delete%></a></li>
-						</ul>
+						<%if !current_user.nil?%>
+							<ul class="nav navbar-nav navbar-right"> 
+								<li class="topbar-link"><%= link_to 'Home', root_path %></li>
+								<%if !current_user.admin?%>
+									<li class="topbar-link"><%= link_to 'My Portfolio', {:controller => 'posts', :action => 'index', :user_id => current_user.id} %></li>
+								<%end%>
+								<li class="topbar-link"><%= link_to 'Class Portfolios', {:controller => 'posts', :action => 'userlist'} %></li>
 
 
-						<ul class="nav navbar-nav navbar-left"> 
-							<li><a class="topbar-link" href="<%= root_path %>"><%= 'Home' %></a></li>
-							<li><a class="topbar-link"><%= link_to 'My Portfolio', {:controller => 'posts', :action => 'index', :user_id => current_user.id} %></a></li>
-							<li><a class="topbar-link"><%= link_to 'Class Portfolios', {:controller => 'posts', :action => 'userlist'} %></a></li>
+								<li><a class="toplink">Logged in as: 
+									<%= if current_user.nil?
+										"not logged in"
+									else
+										current_user.name 
+										end %>
+									</a>
+								</li>
+								<li class="toplink"><%=link_to 'Sign out', destroy_user_session_path, :method => :delete%></li>
+							</ul>
 
-							<br><br><br>
-						</ul>
+						<%end%>
 					</nav>
 
 				</div>

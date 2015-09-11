@@ -23,7 +23,12 @@
         <td><%= assignment.draft_due.strftime("%-b %-d at %I:%M%p") %></td>
         <td><%= assignment.final_due.strftime("%-b %-d at %I:%M%p") %></td>
         <%if !current_user.admin?%>
-          <td>link to my post form creation</td>
+          <%if Post.where(user_id: current_user.id, assignment_id: assignment.id).exists?%>
+            <%@post = Post.where(user_id: current_user.id, assignment_id: assignment.id).first%>
+            <td><%=link_to "Edit/Continue Assignment", {:controller => 'posts', :action => 'edit', :id => @post.id}%></td>
+          <%else%>
+            <td><%= link_to "Start Assignment", new_post_path%></td>
+          <%end%>
         <%end%>
         <td><%=link_to "See Posts", {:controller => 'assignments', :action => 'postlist', :id => assignment.id}%></td>
         <%if current_user.admin?%>

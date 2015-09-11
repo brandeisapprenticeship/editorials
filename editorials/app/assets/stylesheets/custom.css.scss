@@ -1,0 +1,37 @@
+html {
+	font-family: Sans-Serif;
+}
+
+body{
+	padding-top: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+	background: #ffffff !important; //white
+}
+
+.postcontent {
+	border: 3px solid black;
+	padding: 5px;
+}
+
+.portfoliocontent {
+	overflow-y: scroll;
+	max-height: 500px;
+	border: 3px solid black;
+	padding-top: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.commentcontent {
+	border: 1px dotted gray;
+	padding: 2px;
+}
+
+.navbar-inverse {
+	height: 100px;
+}
+
+.navbar-header{
+	width: 95%;
+}
