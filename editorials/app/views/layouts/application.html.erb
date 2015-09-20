@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<body>
 <head>
 
 	<title>Editorials</title>
@@ -10,15 +11,16 @@
 
 	<link rel="stylesheet" href="custom.css.scss">
 </head>
-<body>
+
 	<header class="navbar navbar-fixed-top navbar-inverse">
-		<div class="container-fluid">
+		
 			<div class="navbar-header">
 				<a class="navbar-brand">Editorial Writing</a>
+				<div class="container-fluid">
 
 					<nav> <%# navigation bar %>
 						<%if !current_user.nil?%>
-							<ul class="nav navbar-nav navbar-right"> 
+							<ul class="nav navbar-nav navbar"> 
 								<li class="topbar-link"><%= link_to 'Home', root_path %></li>
 								<%if !current_user.admin?%>
 									<li class="topbar-link"><%= link_to 'My Portfolio', {:controller => 'posts', :action => 'index', :user_id => current_user.id} %></li>

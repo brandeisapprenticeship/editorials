@@ -6,7 +6,13 @@ body{
 	padding-top: 50px;
 	padding-left: 50px;
 	padding-right: 50px;
-	background: #ffffff !important; //white
+	background-image: url("crumpled-paper.png");
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
+	
 }
 
 .postcontent {
@@ -30,8 +36,80 @@ body{
 
 .navbar-inverse {
 	height: 100px;
+	background-image: url("crumpled-paper.png");
+	text-align: center;
+	color: #FFFFFF;
+	border-bottom: 1px solid #000000;
 }
 
 .navbar-header{
-	width: 95%;
+	width: 100%;
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
+	text-align: center;
+}
+
+.navbar{
+	width: 100%;
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
+	text-align: center;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+}
+
+.navbar-brand {
+	width: 100%;
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-size: 48px;
+	background-image: url("crumpled-paper.png");
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
+	text-align: center;
+	color: #000000 !important;
+	border-bottom: 1px solid #000000;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
+}
+
+.table {
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
+}
+
+a {
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
+	color: #000000 !important;
+	text-align: center;
+}
+
+.label {
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
 }
