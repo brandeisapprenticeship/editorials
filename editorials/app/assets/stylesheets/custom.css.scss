@@ -23,6 +23,10 @@ body{
 .portfoliocontent {
 	overflow-y: scroll;
 	max-height: 500px;
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
 	border: 3px solid black;
 	padding-top: 0px;
 	padding-left: 5px;
@@ -32,6 +36,7 @@ body{
 .commentcontent {
 	border: 1px dotted gray;
 	padding: 2px;
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
 }
 
 .navbar-inverse {
@@ -55,6 +60,7 @@ body{
 .navbar{
 	width: 100%;
 	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-size: 20px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
@@ -94,6 +100,22 @@ body{
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.3999996185303px;
+}
+
+.table-bordered {
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.3999996185303px;
+}
+
+tr {
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+}
+
+td {
+	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
 }
 
 a {

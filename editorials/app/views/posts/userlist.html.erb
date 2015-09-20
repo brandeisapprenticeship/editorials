@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="custom.css.scss">
 <h1>User Portfolios</h1>
 <table class='table table-bordered'>
 	<thead>
@@ -9,8 +10,8 @@
   	<tbody>
 	    <% @users.each do |user| %>
 	      <tr>
-	        <td><%= user.name %></td>
-	        <td><%= link_to "Go",  {:controller => 'posts', :action => 'index', :user_id => user.id}%></td>
+	        <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><%= user.name %></td>
+	        <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><%= link_to "Go",  {:controller => 'posts', :action => 'index', :user_id => user.id}%></td>
 	      </tr>
 	    <% end %>
   	</tbody>

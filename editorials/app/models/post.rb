@@ -4,4 +4,8 @@ class Post < ActiveRecord::Base
 	has_many :comments
 
 	validates :assignment_id, presence: { :message => "You must choose an assignment tag."}
+
+	def numberofcomments
+		self.comments.count
+	end
 end

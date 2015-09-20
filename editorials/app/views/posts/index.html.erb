@@ -6,23 +6,23 @@
       <h2><%= post.title%></h2>
     </p>
 
-    <p>
+    <p style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;">
       For Assignment: <%= post.assignment.title%>
     </p>
 
-    <p>
+    <p style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;">
       <%=post.content.html_safe%>
     </p>
 
     <%if !post.comments.empty?%>
-      <h4>Comments:</h4>
+      <h4 >Comments:</h4>
         <%post.comments.each do |comment|%>
           <div class="commentcontent">
-            <p>
+            <p style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;">
               <%=comment.content.html_safe%>
             </p>
 
-            <p>
+            <p style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;">
               By: <%=comment.user.name%>
             </p>
           </div>

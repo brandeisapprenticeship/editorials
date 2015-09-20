@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="contents.css">
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -12,18 +13,24 @@
   <% end %>
 
   <div class="field">
+    <div style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;">
     <%= f.label :title, "Headline" %><br>
     <%= f.text_field :title%>
   </div>
-
-  <div class="field">
-    <%= f.label :assignment_id, "Which assignment is this post for?"%><br>
-    <%= f.collection_select :assignment_id, Assignment.all, :id, :title, :prompt => "Choose Assignment"%>
   </div>
 
   <div class="field">
+     <div style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;">
+    <%= f.label :assignment_id, "Which assignment is this post for?"%><br>
+    <%= f.collection_select :assignment_id, Assignment.all, :id, :title, :prompt => "Choose Assignment"%>
+  </div>
+  </div>
+
+  <div class="field">
+     <div style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;">
     <%= f.label :content %><br>
     <%= f.cktext_area :content, :ckeditor => {:language => 'en'} %>
+  </div>
   </div>
 
   <div class="field">

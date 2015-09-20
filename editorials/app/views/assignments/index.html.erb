@@ -19,9 +19,9 @@
   <tbody>
     <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= assignment.title %></td>
-        <td><%= assignment.draft_due.strftime("%-b %-d at %I:%M%p") %></td>
-        <td><%= assignment.final_due.strftime("%-b %-d at %I:%M%p") %></td>
+        <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><%= assignment.title %></td>
+        <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><%= assignment.draft_due.strftime("%-b %-d at %I:%M%p") %></td>
+        <td style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;"><%= assignment.final_due.strftime("%-b %-d at %I:%M%p") %></td>
         <%if !current_user.admin?%>
           <%if Post.where(user_id: current_user.id, assignment_id: assignment.id).exists?%>
             <%@post = Post.where(user_id: current_user.id, assignment_id: assignment.id).first%>

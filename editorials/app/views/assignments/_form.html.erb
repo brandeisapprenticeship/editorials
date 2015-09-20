@@ -12,13 +12,15 @@
   <% end %>
 
   <div class="field">
+    <div style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;">
     <%= f.label :title %><br>
     <%= f.text_field :title%>
+  </div>
   </div>
 
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.cktext_area :description, :ckeditor => {:language => 'en'} %>
+    <%= f.cktext_area :description, :ckeditor => {:language => 'en', :font_defaultLabel = 'TimesNewRoman'} %>
   </div>
 
   <div class="field">
