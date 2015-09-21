@@ -1,6 +1,6 @@
 class AssignmentsController < ApplicationController
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /assignments
   # GET /assignments.json
   def index
@@ -14,7 +14,8 @@ class AssignmentsController < ApplicationController
 
   def postlist
     @assignment = Assignment.find(params[:id])
-    @posts = Post.where(assignment_id: @assignment.id)
+    @posts = Post.where(assignment_id: @assignment.id).order(sort_column + " " + sort_direction)
+   #S @posts.order(params[:sort])
   end
 
   # GET /assignments/new
@@ -67,6 +68,14 @@ class AssignmentsController < ApplicationController
   end
 
   private
+
+  def sort_column
+    Post.where(assignment_id: @assignment.id).column_names.include?(params[:sort]) ? params[:sort] : "user_name"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_assignment
       @assignment = Assignment.find(params[:id])

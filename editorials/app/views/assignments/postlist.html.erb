@@ -2,10 +2,10 @@
 <table class='table table-bordered'>
   <thead>
       <tr>
-        <th>Headline</th>
-        <th>Author</th>
-        <th>Number of Comments</th>
-        <th>Last updated</th>
+        <th><%= sortable "title", "Headline", :id => @assignment.id %></th>
+        <th><%= sortable "user_name", "Author", :id => @assignment.id %></th>
+        <th><%= sortable "numberofcomments", "Number of Comments", :id => @assignment.id %></th>
+        <th><%= sortable "updated_at", "Last Updated", :id => @assignment.id%></th>
       </tr>
     </thead>
     <tbody>
