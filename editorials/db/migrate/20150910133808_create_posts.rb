@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration
     	t.integer :user_id
     	t.string :user_name
     	t.integer :assignment_id
+      t.integer :number_of_comments, default: 0
 
       t.timestamps null: false
     end
