@@ -19,20 +19,22 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @assignment = Assignment.find(params[:assignment_id])
+    @post = Post.new(assignment_id: @assignment.id)
     @user = current_user
   end
 
   # GET /posts/1/edit
   def edit
     @user = current_user
+    @assignment = Assignment.find(params[:assignment_id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-     @user = current_user
+    @user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }

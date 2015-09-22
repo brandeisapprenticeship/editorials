@@ -1,4 +1,16 @@
 <link rel="stylesheet" href="contents.css">
+
+<% if !@post.nil? && @post.assignment.final_due < Time.zone.now %>
+<h1> The due date has passed, you can no longer edit this post. </h1>
+<h1><%=@post.title%></h1>
+<h3>By: <%=@post.user.name%></h3>
+<br>
+<div class="postcontent">
+  <%=@post.content.html_safe%>
+</div>
+
+<% else %>
+
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -21,8 +33,7 @@
 
   <div class="field">
      <div style="font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;">
-    <%= f.label :assignment_id, "Which assignment is this post for?"%><br>
-    <%= f.collection_select :assignment_id, Assignment.all, :id, :title, :prompt => "Choose Assignment"%>
+    <%= f.hidden_field :assignment_id, value: @assignment.id%>
   </div>
   </div>
 
@@ -44,4 +55,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
 <% end %>
