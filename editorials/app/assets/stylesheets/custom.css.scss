@@ -110,6 +110,14 @@ body{
 	line-height: 26.3999996185303px;
 }
 
+th .asc {
+  background-image: url(/images/up_arrow.png);
+}
+
+th .desc {
+  background-image: url(/images/down_arrow.png);
+}
+
 tr {
 	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
 }

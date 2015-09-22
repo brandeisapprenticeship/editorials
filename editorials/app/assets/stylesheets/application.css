@@ -14,3 +14,18 @@
  *= require_tree .
  *= require_self
  */
+th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+ th .asc {
+ 	padding-right: 20px;
+  background-image: url(/assets/up_arrow.png);
+}
+
+th .desc {
+	padding-right: 20px;
+  background-image: url(/assets/down_arrow.png);
+}
