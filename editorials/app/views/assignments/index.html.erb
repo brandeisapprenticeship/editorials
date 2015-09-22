@@ -34,8 +34,7 @@
         <%end%>
         <td><%=link_to "See Posts", {:controller => 'assignments', :action => 'postlist', :id => assignment.id}%></td>
         <%if current_user.admin?%>
-          <td><%= link_to 'Edit', edit_assignment_path(assignment.id) %>&nbsp&nbsp&nbsp&nbsp
-          <%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_assignment_path(assignment.id) %></td>
         <%end%>
       </tr>
     <% end %>
