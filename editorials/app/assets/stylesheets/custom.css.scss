@@ -128,6 +128,11 @@ a {
 	text-align: center;
 }
 
+a:hover {
+	background-color: transparent !important;
+    color: #1C5AEA !important;
+}
+
 .label {
 	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
 	font-style: normal;
