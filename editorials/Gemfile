@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'devise'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 gem 'ahoy_matey'
 gem 'activeuuid', '>= 0.5.0'
 gem 'ckeditor'
 gem 'paper_trail', '~> 4.0.0'
 gem 'paperclip'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'therubyracer'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

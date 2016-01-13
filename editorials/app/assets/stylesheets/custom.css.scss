@@ -6,7 +6,7 @@ body{
 	padding-top: 50px;
 	padding-left: 50px;
 	padding-right: 50px;
-	background-image: url("crumpled-paper.png");
+	background-image: url(image_path('crumpled-paper'));
 	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
 	font-style: normal;
 	font-variant: normal;
@@ -40,7 +40,7 @@ body{
 
 .navbar-inverse {
 	height: 100px;
-	background-image: url("crumpled-paper.png");
+	background-image: url(image_path('crumpled-paper'));
 	text-align: center;
 	color: #FFFFFF;
 	border-bottom: 1px solid #000000;
@@ -75,7 +75,8 @@ body{
 	width: 100%;
 	font-family: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
 	font-size: 48px;
-	background-image: url("crumpled-paper.png");
+	background-image: url(image_path('crumpled-paper'));
+	;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
